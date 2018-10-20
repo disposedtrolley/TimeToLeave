@@ -12,6 +12,7 @@
 		5A0083A5217B246100A99299 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A0083A3217B246100A99299 /* Main.storyboard */; };
 		5A3F76D5217B256B00D7E52A /* .env in Resources */ = {isa = PBXBuildFile; fileRef = 5A3F76D4217B256B00D7E52A /* .env */; };
 		5A5795B1217B3064009634B1 /* TimetableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5795B0217B3064009634B1 /* TimetableViewController.swift */; };
+		5A5795B3217B336B009634B1 /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5795B2217B336B009634B1 /* EventMonitor.swift */; };
 		C938AA54EAC6310170EBFF94 /* Pods_TimeToLeave.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9344E61D89723CA30101F6A /* Pods_TimeToLeave.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,7 @@
 		5A0083A7217B246100A99299 /* TimeToLeave.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TimeToLeave.entitlements; sourceTree = "<group>"; };
 		5A3F76D4217B256B00D7E52A /* .env */ = {isa = PBXFileReference; lastKnownFileType = text; path = .env; sourceTree = "<group>"; };
 		5A5795B0217B3064009634B1 /* TimetableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableViewController.swift; sourceTree = "<group>"; };
+		5A5795B2217B336B009634B1 /* EventMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
 		6E90183A1F9E3BBCB02978F8 /* Pods-TimeToLeave.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeToLeave.release.xcconfig"; path = "Pods/Target Support Files/Pods-TimeToLeave/Pods-TimeToLeave.release.xcconfig"; sourceTree = "<group>"; };
 		D9344E61D89723CA30101F6A /* Pods_TimeToLeave.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TimeToLeave.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -77,6 +79,7 @@
 				5A0083A7217B246100A99299 /* TimeToLeave.entitlements */,
 				5A3F76D4217B256B00D7E52A /* .env */,
 				5A5795B0217B3064009634B1 /* TimetableViewController.swift */,
+				5A5795B2217B336B009634B1 /* EventMonitor.swift */,
 			);
 			path = TimeToLeave;
 			sourceTree = "<group>";
@@ -210,6 +213,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A5795B3217B336B009634B1 /* EventMonitor.swift in Sources */,
 				5A5795B1217B3064009634B1 /* TimetableViewController.swift in Sources */,
 				5A00839E217B245E00A99299 /* AppDelegate.swift in Sources */,
 			);
