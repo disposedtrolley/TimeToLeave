@@ -13,6 +13,9 @@
 		5A3F76D5217B256B00D7E52A /* .env in Resources */ = {isa = PBXBuildFile; fileRef = 5A3F76D4217B256B00D7E52A /* .env */; };
 		5A5795B1217B3064009634B1 /* TimetableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5795B0217B3064009634B1 /* TimetableViewController.swift */; };
 		5A5795B3217B336B009634B1 /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5795B2217B336B009634B1 /* EventMonitor.swift */; };
+		5A5795B5217B35BD009634B1 /* PTV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5795B4217B35BD009634B1 /* PTV.swift */; };
+		5A5795B7217B36AE009634B1 /* Stop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5795B6217B36AE009634B1 /* Stop.swift */; };
+		5A5795BA217B38A1009634B1 /* RouteType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5795B9217B38A1009634B1 /* RouteType.swift */; };
 		C938AA54EAC6310170EBFF94 /* Pods_TimeToLeave.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9344E61D89723CA30101F6A /* Pods_TimeToLeave.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +30,9 @@
 		5A3F76D4217B256B00D7E52A /* .env */ = {isa = PBXFileReference; lastKnownFileType = text; path = .env; sourceTree = "<group>"; };
 		5A5795B0217B3064009634B1 /* TimetableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableViewController.swift; sourceTree = "<group>"; };
 		5A5795B2217B336B009634B1 /* EventMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
+		5A5795B4217B35BD009634B1 /* PTV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTV.swift; sourceTree = "<group>"; };
+		5A5795B6217B36AE009634B1 /* Stop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stop.swift; sourceTree = "<group>"; };
+		5A5795B9217B38A1009634B1 /* RouteType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteType.swift; sourceTree = "<group>"; };
 		6E90183A1F9E3BBCB02978F8 /* Pods-TimeToLeave.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeToLeave.release.xcconfig"; path = "Pods/Target Support Files/Pods-TimeToLeave/Pods-TimeToLeave.release.xcconfig"; sourceTree = "<group>"; };
 		D9344E61D89723CA30101F6A /* Pods_TimeToLeave.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TimeToLeave.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -72,6 +78,7 @@
 		5A00839C217B245E00A99299 /* TimeToLeave */ = {
 			isa = PBXGroup;
 			children = (
+				5A5795B8217B36B2009634B1 /* PTV */,
 				5A00839D217B245E00A99299 /* AppDelegate.swift */,
 				5A0083A1217B246100A99299 /* Assets.xcassets */,
 				5A0083A3217B246100A99299 /* Main.storyboard */,
@@ -82,6 +89,16 @@
 				5A5795B2217B336B009634B1 /* EventMonitor.swift */,
 			);
 			path = TimeToLeave;
+			sourceTree = "<group>";
+		};
+		5A5795B8217B36B2009634B1 /* PTV */ = {
+			isa = PBXGroup;
+			children = (
+				5A5795B4217B35BD009634B1 /* PTV.swift */,
+				5A5795B6217B36AE009634B1 /* Stop.swift */,
+				5A5795B9217B38A1009634B1 /* RouteType.swift */,
+			);
+			path = PTV;
 			sourceTree = "<group>";
 		};
 		AEE421DB3C8581F4019059C0 /* Pods */ = {
@@ -127,6 +144,11 @@
 				TargetAttributes = {
 					5A008399217B245E00A99299 = {
 						CreatedOnToolsVersion = 10.0;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -172,12 +194,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-TimeToLeave/Pods-TimeToLeave-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -215,7 +239,10 @@
 			files = (
 				5A5795B3217B336B009634B1 /* EventMonitor.swift in Sources */,
 				5A5795B1217B3064009634B1 /* TimetableViewController.swift in Sources */,
+				5A5795B7217B36AE009634B1 /* Stop.swift in Sources */,
+				5A5795B5217B35BD009634B1 /* PTV.swift in Sources */,
 				5A00839E217B245E00A99299 /* AppDelegate.swift in Sources */,
+				5A5795BA217B38A1009634B1 /* RouteType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,6 +13,8 @@ class TimetableViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
+        
+        PTV.stops(latitude: -37.8584388, longitude: 145.0268829, routeTypes: [RouteType.train])
     }
     
    
