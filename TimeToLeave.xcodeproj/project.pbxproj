@@ -10,6 +10,7 @@
 		5A00839E217B245E00A99299 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A00839D217B245E00A99299 /* AppDelegate.swift */; };
 		5A0083A2217B246100A99299 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A0083A1217B246100A99299 /* Assets.xcassets */; };
 		5A0083A5217B246100A99299 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A0083A3217B246100A99299 /* Main.storyboard */; };
+		5A008AFB217C31C40095CA88 /* PTVHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A008AFA217C31C40095CA88 /* PTVHelpers.swift */; };
 		5A3F76D5217B256B00D7E52A /* .env in Resources */ = {isa = PBXBuildFile; fileRef = 5A3F76D4217B256B00D7E52A /* .env */; };
 		5A5795B1217B3064009634B1 /* TimetableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5795B0217B3064009634B1 /* TimetableViewController.swift */; };
 		5A5795B3217B336B009634B1 /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5795B2217B336B009634B1 /* EventMonitor.swift */; };
@@ -25,6 +26,7 @@
 		5A0083A4217B246100A99299 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5A0083A6217B246100A99299 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A0083A7217B246100A99299 /* TimeToLeave.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TimeToLeave.entitlements; sourceTree = "<group>"; };
+		5A008AFA217C31C40095CA88 /* PTVHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PTVHelpers.swift; path = /Users/liu/Documents/projects/TimeToLeave/TimeToLeave/PTVHelpers.swift; sourceTree = "<absolute>"; };
 		5A3F76D4217B256B00D7E52A /* .env */ = {isa = PBXFileReference; lastKnownFileType = text; path = .env; sourceTree = "<group>"; };
 		5A5795B0217B3064009634B1 /* TimetableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableViewController.swift; sourceTree = "<group>"; };
 		5A5795B2217B336B009634B1 /* EventMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 		5A00839C217B245E00A99299 /* TimeToLeave */ = {
 			isa = PBXGroup;
 			children = (
+				5A008AFA217C31C40095CA88 /* PTVHelpers.swift */,
 				5A5795B4217B35BD009634B1 /* APICredentials.swift */,
 				5A00839D217B245E00A99299 /* AppDelegate.swift */,
 				5A0083A1217B246100A99299 /* Assets.xcassets */,
@@ -221,6 +224,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A008AFB217C31C40095CA88 /* PTVHelpers.swift in Sources */,
 				5A5795B3217B336B009634B1 /* EventMonitor.swift in Sources */,
 				5A5795B1217B3064009634B1 /* TimetableViewController.swift in Sources */,
 				5A5795B5217B35BD009634B1 /* APICredentials.swift in Sources */,

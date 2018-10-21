@@ -10,22 +10,15 @@ import Cocoa
 import SwiftPTV
 
 class TimetableViewController: NSViewController {
-
-    var communicator: SwiftPTV
-    
     required init?(coder: NSCoder) {
-        self.communicator = SwiftPTV(apiKey: APICredentials.API_KEY, userID: APICredentials.API_DEVID)
-        
         super.init(coder: coder)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do view setup here.
         
-        self.communicator.retrieveStopsNearLocation(location: Location(latitude: -37.8584388, longitude: 145.0268829), parameters: ["route_types": "[0]", "max_distance": 1000]) {response in
-            
-            print(response?.stops)
+        PTVHelpers.getStopsNear(location: Location(latitude: -37.8584388, longitude: 145.0268829), routeTypes: [0]) { response in
+            print(response)
         }
     }
     
