@@ -1,0 +1,6 @@
+framework module SwiftPTV {
+  umbrella header "SwiftPTV-umbrella.h"
+
+  export *
+  module * { export * }
+}

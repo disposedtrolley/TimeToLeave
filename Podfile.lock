@@ -1,16 +1,16 @@
 PODS:
-  - Alamofire (4.7.3)
+  - SwiftPTV (0.0.5)
 
 DEPENDENCIES:
-  - Alamofire (~> 4.7)
+  - SwiftPTV
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - Alamofire
+    - SwiftPTV
 
 SPEC CHECKSUMS:
-  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
+  SwiftPTV: a94021d103daa22741936b5adc80ed27eeafa6e9
 
-PODFILE CHECKSUM: 32766ee8ea1c90c74e8c5e5700b81f951da847be
+PODFILE CHECKSUM: 8c165d8762931d992b9f7f80800bcddda27552fc
 
 COCOAPODS: 1.5.3

@@ -1,7 +1,8 @@
 //
-//  DispatchQueue+Alamofire.swift
+//  Route.swift
+//  SwiftPTV
 //
-//  Copyright (c) 2014-2018 Alamofire Software Foundation (http://alamofire.org/)
+//  Copyright (c) 2017 evilgoldfish.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -22,16 +23,28 @@
 //  THE SOFTWARE.
 //
 
-import Dispatch
 import Foundation
 
-extension DispatchQueue {
-    static var userInteractive: DispatchQueue { return DispatchQueue.global(qos: .userInteractive) }
-    static var userInitiated: DispatchQueue { return DispatchQueue.global(qos: .userInitiated) }
-    static var utility: DispatchQueue { return DispatchQueue.global(qos: .utility) }
-    static var background: DispatchQueue { return DispatchQueue.global(qos: .background) }
+public struct RouteType: Codable {
+    public let name: String?
+    public let type: Int?
+    
+    internal enum CodingKeys: String, CodingKey {
+        case name = "route_type_name"
+        case type = "route_type"
+    }
+}
 
-    func after(_ delay: TimeInterval, execute closure: @escaping () -> Void) {
-        asyncAfter(deadline: .now() + delay, execute: closure)
+public struct Route: Codable {
+    public let type: Int?
+    public let ID: Int?
+    public let name: String?
+    public let number: String?
+    
+    internal enum CodingKeys: String, CodingKey {
+        case type = "route_type"
+        case ID = "route_id"
+        case name = "route_name"
+        case number = "route_number"
     }
 }
