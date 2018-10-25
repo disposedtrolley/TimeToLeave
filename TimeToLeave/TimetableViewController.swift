@@ -17,7 +17,13 @@ class TimetableViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        PTVHelpers.getNextDeparturesFrom(stopId: 1118, routeId: 6, direction: 5)
+        PTVHelpers.getStopsNear(location: Location(latitude: -37.8584388, longitude: 145.0268829), routeTypes: [0]) { response in
+            print(response)
+        }
+        
+        PTVHelpers.getNextDeparturesFrom(stopId: 1118, routeId: 6, direction: 5) { response in
+            
+        }
     
     }
 }
