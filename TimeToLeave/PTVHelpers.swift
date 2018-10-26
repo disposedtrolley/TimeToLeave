@@ -37,7 +37,11 @@ class PTVHelpers {
         PTVHelpers.getRoute(routeId: routeId) { route in
             PTVHelpers.getRouteTypes() { routeTypes in
                 self.communicator.retrieveDepartures(stopID: stopId, route: route!, routeType: routeTypes[0], parameters: nil) { response in
-                        completionHandler(response?.departures)
+                    
+                    // Filter out past departures.
+                    let filteredDepartures = response?.departures!.filter({ $0.scheduledDeparture! >= Date() })
+                    
+                    completionHandler(filteredDepartures)
                 }
             }
         }
