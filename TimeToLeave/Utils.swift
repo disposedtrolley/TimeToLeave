@@ -24,4 +24,15 @@ extension Date {
         return Date(timeInterval: seconds, since: self)
     }
     
+    func minutesFromNow() -> Int {
+        let calendar = Calendar.current
+        
+        let targetComponents = calendar.dateComponents([.hour, .minute], from: self)
+        let nowComponents = calendar.dateComponents([.hour, .minute], from: Date().toLocalTime())
+        
+        let difference = calendar.dateComponents([.minute], from: nowComponents, to: targetComponents).minute!
+        
+        return difference
+    }
+    
 }
