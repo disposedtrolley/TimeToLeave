@@ -688,7 +688,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CFP-wF-S8c" userLabel="ResultsView">
+                            <customView identifier="loadingView" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ob4-Ug-SCW" userLabel="LoadingView">
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <subviews>
+                                    <progressIndicator wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" maxValue="100" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="YA7-oD-M6b">
+                                        <rect key="frame" x="232" y="127" width="16" height="16"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    </progressIndicator>
+                                </subviews>
+                            </customView>
+                            <customView identifier="resultsView" hidden="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CFP-wF-S8c" userLabel="ResultsView">
                                 <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
@@ -750,15 +760,15 @@
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
-                                    <scrollView fixedFrame="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SZC-Z6-DcL">
+                                    <scrollView fixedFrame="YES" borderType="line" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SZC-Z6-DcL">
                                         <rect key="frame" x="20" y="20" width="440" height="135"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <clipView key="contentView" ambiguous="YES" id="ZCM-8f-Ozm">
-                                            <rect key="frame" x="0.0" y="0.0" width="440" height="135"/>
+                                            <rect key="frame" x="1" y="1" width="438" height="133"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="k0p-Dd-ALH" viewBased="YES" id="lwT-pz-82V">
-                                                    <rect key="frame" x="0.0" y="0.0" width="440" height="110"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="438" height="108"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <size key="intercellSpacing" width="3" height="2"/>
                                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -863,7 +873,7 @@
                                                                 </tableCellView>
                                                             </prototypeCellViews>
                                                         </tableColumn>
-                                                        <tableColumn width="78" minWidth="10" maxWidth="3.4028234663852886e+38" id="cHe-UH-rDk">
+                                                        <tableColumn width="76" minWidth="10" maxWidth="3.4028234663852886e+38" id="cHe-UH-rDk">
                                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Platform">
                                                                 <font key="font" metaFont="smallSystem"/>
                                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -877,11 +887,11 @@
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                             <prototypeCellViews>
                                                                 <tableCellView id="uF3-4U-1pC">
-                                                                    <rect key="frame" x="360" y="1" width="78" height="17"/>
+                                                                    <rect key="frame" x="360" y="1" width="76" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
                                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EJs-RB-XDr">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="78" height="17"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="76" height="17"/>
                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="8" id="nnH-p2-Dyv">
                                                                                 <font key="font" metaFont="system"/>
@@ -909,7 +919,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
                                         <tableHeaderView key="headerView" wantsLayer="YES" id="k0p-Dd-ALH">
-                                            <rect key="frame" x="0.0" y="0.0" width="440" height="25"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="438" height="25"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableHeaderView>
                                     </scrollView>
@@ -918,8 +928,11 @@
                         </subviews>
                     </view>
                     <connections>
+                        <outlet property="loadingIndicator" destination="YA7-oD-M6b" id="WTl-qe-cnY"/>
+                        <outlet property="loadingView" destination="Ob4-Ug-SCW" id="4hi-mt-Ka5"/>
                         <outlet property="minsToNextDeparture" destination="TzH-XR-Cde" id="dr0-fo-bA7"/>
                         <outlet property="minsToNextDepartureDesc" destination="Ska-th-bor" id="cW8-cs-dXl"/>
+                        <outlet property="resultsView" destination="CFP-wF-S8c" id="opi-hI-q3M"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

@@ -14,6 +14,10 @@ class TimetableViewController: NSViewController {
     @IBOutlet weak var minsToNextDeparture: NSTextField!
     @IBOutlet weak var minsToNextDepartureDesc: NSTextField!
     
+    @IBOutlet weak var loadingView: NSView!
+    @IBOutlet weak var resultsView: NSView!
+    @IBOutlet weak var loadingIndicator: NSProgressIndicator!
+    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
@@ -21,20 +25,31 @@ class TimetableViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Animate the loading indicator
+        self.loadingIndicator.startAnimation(self)
+        
         // Hide all UI elements whilst loading
-//        self.minsToNextDeparture.isHidden = true
-//        self.minsToNextDepartureDesc.isHidden = true
+        self.resultsView.isHidden = true
+        self.loadingView.isHidden = false
+        
         
         PTVHelpers.getStopsNear(location: Location(latitude: -37.8584388, longitude: 145.0268829), routeTypes: [0]) { response in
         }
         
         PTVHelpers.getNextDeparturesFrom(stopId: 1071, routeId: 12, direction: 11) { response in
-            if response!.count > 0 {
-                let nextDept = response![0]
+            // Hide loading indicator and show results
+            DispatchQueue.main.async {
+                self.resultsView.isHidden = false
+                self.loadingView.isHidden = true
+                self.loadingIndicator.stopAnimation(self)
                 
-                self.updateNextDeparture(nextDept)
-            } else {
-                print("No departures found")
+                if response!.count > 0 {
+                    let nextDept = response![0]
+                    
+                    self.updateNextDeparture(nextDept)
+                } else {
+                    print("No departures found")
+                }
             }
         }
     }
@@ -45,15 +60,7 @@ class TimetableViewController: NSViewController {
         
         
         self.minsToNextDeparture.stringValue = String(minutesToDeparture!)
-        
-        self.minsToNextDeparture.isHidden = false
-        self.minsToNextDepartureDesc.isHidden = false
-        
-        
     }
-    
-    
-    
 }
 
 extension TimetableViewController {
