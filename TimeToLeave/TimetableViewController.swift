@@ -27,6 +27,10 @@ class TimetableViewController: NSViewController {
         super.init(coder: coder)
     }
     
+    override func viewDidLoad() {
+        // @TODO need to preload stop, route, and direction info and persist to local storage
+    }
+    
     override func viewWillAppear() {
         super.viewDidLoad()
         
@@ -38,10 +42,10 @@ class TimetableViewController: NSViewController {
         self.loadingView.isHidden = false
         
         
-        PTVHelpers.getStopsNear(location: Location(latitude: -37.8584388, longitude: 145.0268829), routeTypes: [0]) { response in
+        PTVHelpers.getStopsNear(location: Location(latitude: Config.TEST_LATITUDE, longitude: Config.TEST_LONGITUDE), routeTypes: [0]) { response in
         }
         
-        PTVHelpers.getNextDeparturesFrom(stopId: 1071, routeId: 12, direction: 11) { response in
+        PTVHelpers.getNextDeparturesFrom(stopId: Config.ORIGINATING_STOP_ID, routeId: Config.ORIGINATING_ROUTE_ID, direction: Config.ORIGINATIG_DIRECTION) { response in
             // Hide loading indicator and show results
             DispatchQueue.main.async {
                 self.resultsView.isHidden = false
@@ -57,6 +61,10 @@ class TimetableViewController: NSViewController {
                 }
             }
         }
+    }
+    
+    fileprivate func getNextDepartureInfo() {
+        
     }
     
     fileprivate func updateNextDeparture(_ departure: Departure) {
