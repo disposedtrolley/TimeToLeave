@@ -40,6 +40,11 @@ class TimetableViewController: NSViewController {
         // @TODO need to preload stop, route, and direction info and persist to local storage
     }
     
+    override func viewDidLoad() {
+        self.subsequentDeptsTableView.delegate = self
+        self.subsequentDeptsTableView.dataSource = self
+    }
+    
     override func viewWillAppear() {
         super.viewDidLoad()
         
@@ -60,6 +65,8 @@ class TimetableViewController: NSViewController {
             
             if self.nextDepartures!.count > 0 {
                 self.updateNextDeparture(self.nextDepartures![0])
+                
+                self.subsequentDeptsTableView.reloadData()
             } else {
                 print("No departures found")
             }
@@ -118,5 +125,57 @@ extension TimetableViewController {
         }
         
         return viewController
+    }
+}
+
+extension TimetableViewController: NSTableViewDataSource {
+    
+    func numberOfRows(in tableView: NSTableView) -> Int {
+        if (self.nextDepartures?.count)! > 0 {
+            return self.nextDepartures!.count / 5
+        } else {
+            return 0
+        }
+    }
+}
+
+extension TimetableViewController: NSTableViewDelegate {
+    fileprivate enum CellIdentifiers {
+        static let MinutesToDeptCell = "MinutesToDeptCellID"
+        static let ScheduledCell = "ScheduledCellID"
+        static let LineCell = "LineCellID"
+        static let PlatformCell = "PlatformCellID"
+    }
+    
+    
+    func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
+        var text: String = ""
+        var cellIdentifier: String = ""
+        
+        guard let departure = self.nextDepartures?[row] else {
+            return nil
+        }
+        
+        // 2
+        if tableColumn == tableView.tableColumns[0] {
+            text = String(departure.scheduledDeparture!.minutesFromNow())
+            cellIdentifier = CellIdentifiers.MinutesToDeptCell
+        } else if tableColumn == tableView.tableColumns[1] {
+            text = departure.scheduledDeparture!.toSimpleString()
+            cellIdentifier = CellIdentifiers.ScheduledCell
+        } else if tableColumn == tableView.tableColumns[2] {
+            text = self.route!.name!
+            cellIdentifier = CellIdentifiers.LineCell
+        } else if tableColumn == tableView.tableColumns[3] {
+            text = departure.platformNumber!
+            cellIdentifier = CellIdentifiers.PlatformCell
+        }
+        
+        // 3
+        if let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: cellIdentifier), owner: nil) as? NSTableCellView {
+            cell.textField?.stringValue = text
+            return cell
+        }
+        return nil
     }
 }

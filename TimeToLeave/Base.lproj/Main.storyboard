@@ -780,7 +780,7 @@
                                                             </textFieldCell>
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                             <prototypeCellViews>
-                                                                <tableCellView id="x9E-ps-th9">
+                                                                <tableCellView identifier="MinutesToDeptCellID" id="x9E-ps-th9">
                                                                     <rect key="frame" x="1" y="1" width="112" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
@@ -813,7 +813,7 @@
                                                             </textFieldCell>
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                             <prototypeCellViews>
-                                                                <tableCellView id="lOW-ZW-liY">
+                                                                <tableCellView identifier="ScheduledCellID" id="lOW-ZW-liY">
                                                                     <rect key="frame" x="116" y="1" width="93" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
@@ -846,7 +846,7 @@
                                                             </textFieldCell>
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                             <prototypeCellViews>
-                                                                <tableCellView id="C2Z-0X-1ZC">
+                                                                <tableCellView identifier="LineCellID" id="C2Z-0X-1ZC">
                                                                     <rect key="frame" x="212" y="1" width="145" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
@@ -879,7 +879,7 @@
                                                             </textFieldCell>
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                             <prototypeCellViews>
-                                                                <tableCellView id="uF3-4U-1pC">
+                                                                <tableCellView identifier="PlatformCellID" id="uF3-4U-1pC">
                                                                     <rect key="frame" x="360" y="1" width="76" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
