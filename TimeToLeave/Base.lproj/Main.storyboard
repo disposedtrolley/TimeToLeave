@@ -945,6 +945,7 @@
                         <outlet property="loadingView" destination="Ob4-Ug-SCW" id="4hi-mt-Ka5"/>
                         <outlet property="minsToNextDepartureDesc" destination="Ska-th-bor" id="cW8-cs-dXl"/>
                         <outlet property="nextDepartureScheduled" destination="I4s-ek-ywn" id="Lkq-q8-ICG"/>
+                        <outlet property="nextDeptDesc" destination="Ska-th-bor" id="mcb-dg-lkd"/>
                         <outlet property="nextDeptLine" destination="ZCG-B8-5Se" id="eFX-kx-nSY"/>
                         <outlet property="nextDeptMinsLeft" destination="TzH-XR-Cde" id="JVl-90-2qi"/>
                         <outlet property="nextDeptMinsTo" destination="TzH-XR-Cde" id="YS0-dD-fGH"/>

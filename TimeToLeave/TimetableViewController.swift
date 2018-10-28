@@ -11,6 +11,7 @@ import SwiftPTV
 
 class TimetableViewController: NSViewController {
     
+    @IBOutlet weak var nextDeptDesc: NSTextField!
     @IBOutlet weak var nextDeptMinsTo: NSTextField!
     @IBOutlet weak var nextDeptStation: NSTextField!
     @IBOutlet weak var nextDeptPlatform: NSTextField!
@@ -96,8 +97,13 @@ class TimetableViewController: NSViewController {
         let departurePlatform = departure.platformNumber
         self.nextDeptPlatform.stringValue = "Platform \(departurePlatform!)"
         
-        let departureStation = "Flinders St"
-        self.nextDeptStation.stringValue = departureStation
+        let departureStation = self.stops?.filter({ $0.ID == Config.ORIGINATING_STOP_ID }).first
+        self.nextDeptStation.stringValue = (departureStation?.name)!
+        
+        let line = self.route?.name
+        self.nextDeptLine.stringValue = line!
+        
+        self.nextDeptDesc.stringValue = minutesToDeparture == 1 ? "minute" : "minutes"
     }
 }
 
