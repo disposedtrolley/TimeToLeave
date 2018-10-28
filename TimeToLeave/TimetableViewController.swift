@@ -11,8 +11,13 @@ import SwiftPTV
 
 class TimetableViewController: NSViewController {
     
-    @IBOutlet weak var minsToNextDeparture: NSTextField!
-    @IBOutlet weak var minsToNextDepartureDesc: NSTextField!
+    @IBOutlet weak var nextDeptMinsTo: NSTextField!
+    @IBOutlet weak var nextDeptStation: NSTextField!
+    @IBOutlet weak var nextDeptPlatform: NSTextField!
+    @IBOutlet weak var nextDeptLine: NSTextField!
+    @IBOutlet weak var nextDeptScheduled: NSTextField!
+    
+    @IBOutlet weak var subsequentDeptsTableView: NSTableView!
     
     @IBOutlet weak var loadingView: NSView!
     @IBOutlet weak var resultsView: NSView!
@@ -22,7 +27,7 @@ class TimetableViewController: NSViewController {
         super.init(coder: coder)
     }
     
-    override func viewDidLoad() {
+    override func viewWillAppear() {
         super.viewDidLoad()
         
         // Animate the loading indicator
@@ -55,11 +60,17 @@ class TimetableViewController: NSViewController {
     }
     
     fileprivate func updateNextDeparture(_ departure: Departure) {
-        let departureTime = departure.scheduledDeparture?.toLocalTime()
-        let minutesToDeparture = departureTime?.minutesFromNow()
+        let departureTime = departure.scheduledDeparture!
+        let minutesToDeparture = departureTime.minutesFromNow()
         
+        self.nextDeptScheduled.stringValue = departure.scheduledDeparture!.toSimpleString()
+        self.nextDeptMinsTo.stringValue = String(minutesToDeparture)
         
-        self.minsToNextDeparture.stringValue = String(minutesToDeparture!)
+        let departurePlatform = departure.platformNumber
+        self.nextDeptPlatform.stringValue = "Platform \(departurePlatform!)"
+        
+        let departureStation = "Flinders St"
+        self.nextDeptStation.stringValue = departureStation
     }
 }
 

@@ -28,11 +28,18 @@ extension Date {
         let calendar = Calendar.current
         
         let targetComponents = calendar.dateComponents([.hour, .minute], from: self)
-        let nowComponents = calendar.dateComponents([.hour, .minute], from: Date().toLocalTime())
+        let nowComponents = calendar.dateComponents([.hour, .minute], from: Date())
         
         let difference = calendar.dateComponents([.minute], from: nowComponents, to: targetComponents).minute!
         
         return difference
+    }
+    
+    func toSimpleString() -> String {
+        let df = DateFormatter()
+        df.dateFormat = "h:mm a"
+        
+        return df.string(from: self)
     }
     
 }

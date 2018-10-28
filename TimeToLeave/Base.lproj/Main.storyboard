@@ -698,62 +698,55 @@
                                     </progressIndicator>
                                 </subviews>
                             </customView>
-                            <customView identifier="resultsView" hidden="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CFP-wF-S8c" userLabel="ResultsView">
+                            <customView identifier="resultsView" hidden="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CFP-wF-S8c" userLabel="ResultsView">
                                 <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
                                     <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="IyH-Ok-cYr">
                                         <rect key="frame" x="20" y="177" width="440" height="5"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     </box>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I4s-ek-ywn">
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="I4s-ek-ywn">
                                         <rect key="frame" x="110" y="227" width="81" height="27"/>
-                                        <autoresizingMask key="autoresizingMask"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" title="5:20pm" id="9rm-PK-oGg">
                                             <font key="font" metaFont="system" size="22"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZCG-B8-5Se">
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ZCG-B8-5Se">
                                         <rect key="frame" x="195" y="227" width="104" height="27"/>
-                                        <autoresizingMask key="autoresizingMask"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" title="Mordialloc" id="9lh-ys-6Ad">
                                             <font key="font" metaFont="system" size="22"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O8w-LJ-kro">
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="O8w-LJ-kro">
                                         <rect key="frame" x="189" y="202" width="83" height="19"/>
-                                        <autoresizingMask key="autoresizingMask"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" title="Flinders St" id="Zx2-cf-x99">
                                             <font key="font" metaFont="systemBold" size="15"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VC9-wZ-wpF">
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="VC9-wZ-wpF">
                                         <rect key="frame" x="110" y="202" width="75" height="19"/>
-                                        <autoresizingMask key="autoresizingMask"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" title="Platform 7" id="VZZ-VH-X6Q">
                                             <font key="font" metaFont="system" size="15"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ska-th-bor">
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ska-th-bor">
                                         <rect key="frame" x="18" y="202" width="57" height="17"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="minutes" placeholderString="minutes" id="JJJ-3n-211">
                                             <font key="font" metaFont="system"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
-                                    <textField identifier="minsToNextDeparture" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TzH-XR-Cde" customClass="label">
+                                    <textField identifier="minsToNextDeparture" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TzH-XR-Cde" customClass="label">
                                         <rect key="frame" x="34" y="220" width="25" height="34"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="5" id="pjU-xk-vkm">
                                             <font key="font" metaFont="system" size="28"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -924,15 +917,42 @@
                                         </tableHeaderView>
                                     </scrollView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="VC9-wZ-wpF" firstAttribute="top" secondItem="CFP-wF-S8c" secondAttribute="top" constant="49" id="1vB-cW-ZKb"/>
+                                    <constraint firstItem="TzH-XR-Cde" firstAttribute="leading" secondItem="CFP-wF-S8c" secondAttribute="leading" constant="36" id="2YR-at-Jcm"/>
+                                    <constraint firstItem="TzH-XR-Cde" firstAttribute="top" secondItem="CFP-wF-S8c" secondAttribute="top" constant="16" id="8Gp-Gn-mqh"/>
+                                    <constraint firstItem="ZCG-B8-5Se" firstAttribute="top" secondItem="CFP-wF-S8c" secondAttribute="top" constant="16" id="Fnt-z4-Qlv"/>
+                                    <constraint firstItem="ZCG-B8-5Se" firstAttribute="leading" secondItem="I4s-ek-ywn" secondAttribute="trailing" constant="8" id="O4G-cs-PoC"/>
+                                    <constraint firstItem="Ska-th-bor" firstAttribute="top" secondItem="TzH-XR-Cde" secondAttribute="bottom" constant="1" id="U7f-dx-bUO"/>
+                                    <constraint firstItem="O8w-LJ-kro" firstAttribute="centerY" secondItem="VC9-wZ-wpF" secondAttribute="centerY" id="Zv1-5D-mE1"/>
+                                    <constraint firstItem="Ska-th-bor" firstAttribute="centerX" secondItem="TzH-XR-Cde" secondAttribute="centerX" id="ZzI-Fm-B4C"/>
+                                    <constraint firstItem="I4s-ek-ywn" firstAttribute="top" secondItem="CFP-wF-S8c" secondAttribute="top" constant="16" id="aRE-fc-4Sb"/>
+                                    <constraint firstItem="VC9-wZ-wpF" firstAttribute="leading" secondItem="I4s-ek-ywn" secondAttribute="leading" id="cza-fl-P4G"/>
+                                    <constraint firstItem="I4s-ek-ywn" firstAttribute="leading" secondItem="CFP-wF-S8c" secondAttribute="leading" constant="112" id="eYr-S5-56S"/>
+                                    <constraint firstItem="O8w-LJ-kro" firstAttribute="leading" secondItem="VC9-wZ-wpF" secondAttribute="trailing" constant="8" id="lB0-p7-YOg"/>
+                                </constraints>
                             </customView>
                         </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="CFP-wF-S8c" secondAttribute="bottom" id="Gcn-Mm-V1i"/>
+                            <constraint firstItem="CFP-wF-S8c" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="UeN-Pa-zzI"/>
+                            <constraint firstItem="CFP-wF-S8c" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="ViP-RV-xdP"/>
+                            <constraint firstAttribute="trailing" secondItem="CFP-wF-S8c" secondAttribute="trailing" id="q3Z-gI-akb"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="loadingIndicator" destination="YA7-oD-M6b" id="WTl-qe-cnY"/>
                         <outlet property="loadingView" destination="Ob4-Ug-SCW" id="4hi-mt-Ka5"/>
-                        <outlet property="minsToNextDeparture" destination="TzH-XR-Cde" id="dr0-fo-bA7"/>
                         <outlet property="minsToNextDepartureDesc" destination="Ska-th-bor" id="cW8-cs-dXl"/>
+                        <outlet property="nextDepartureScheduled" destination="I4s-ek-ywn" id="Lkq-q8-ICG"/>
+                        <outlet property="nextDeptLine" destination="ZCG-B8-5Se" id="eFX-kx-nSY"/>
+                        <outlet property="nextDeptMinsLeft" destination="TzH-XR-Cde" id="JVl-90-2qi"/>
+                        <outlet property="nextDeptMinsTo" destination="TzH-XR-Cde" id="YS0-dD-fGH"/>
+                        <outlet property="nextDeptPlatform" destination="VC9-wZ-wpF" id="xHs-2D-58i"/>
+                        <outlet property="nextDeptScheduled" destination="I4s-ek-ywn" id="UQm-dR-ruG"/>
+                        <outlet property="nextDeptStation" destination="O8w-LJ-kro" id="YQL-36-uNW"/>
                         <outlet property="resultsView" destination="CFP-wF-S8c" id="opi-hI-q3M"/>
+                        <outlet property="subsequentDeptsTableView" destination="lwT-pz-82V" id="UT8-4m-wQh"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
