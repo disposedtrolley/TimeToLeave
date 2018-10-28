@@ -15,4 +15,6 @@ struct Config {
     
     static let TEST_LATITUDE = -37.8584388 // Melbourne City
     static let TEST_LONGITUDE = 145.0268829 // Melbourne City
+    
+    static let TEST_ROUTE_TYPE = 0 // Train
 }
