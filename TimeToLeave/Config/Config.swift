@@ -17,4 +17,6 @@ struct Config {
     static let TEST_LONGITUDE = 145.0268829 // Melbourne City
     
     static let TEST_ROUTE_TYPE = 0 // Train
+    
+    static let MAX_SEARCH_RADIUS = 1000 // 1km
 }

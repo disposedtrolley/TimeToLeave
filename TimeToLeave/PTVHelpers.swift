@@ -24,9 +24,9 @@ class PTVHelpers {
                 .map({ $0.type! })
             
             self.communicator.retrieveStopsNearLocation(
-                location: Location(latitude: -37.8584388, longitude: 145.0268829),
+                location: location,
                 parameters: ["route_types": selectedTypes,
-                            "max_distance": 1000]) { response in
+                            "max_distance": Config.MAX_SEARCH_RADIUS]) { response in
                 completionHandler(response?.stops)
             }
         }
