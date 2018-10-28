@@ -23,16 +23,26 @@ class TimetableViewController: NSViewController {
     @IBOutlet weak var resultsView: NSView!
     @IBOutlet weak var loadingIndicator: NSProgressIndicator!
     
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-    }
+    var nextDepartures: [Departure]?
+    var stops: [StopOnRoute]?
+    var route: Route?
+    var group: DispatchGroup
     
-    override func viewDidLoad() {
+    required init?(coder: NSCoder) {
+        self.nextDepartures = []
+        self.stops = []
+        self.route = nil
+        self.group = DispatchGroup()
+        
+        super.init(coder: coder)
+        
         // @TODO need to preload stop, route, and direction info and persist to local storage
     }
     
     override func viewWillAppear() {
         super.viewDidLoad()
+        
+        self.getNextDepartureInfo()
         
         // Animate the loading indicator
         self.loadingIndicator.startAnimation(self)
@@ -42,28 +52,37 @@ class TimetableViewController: NSViewController {
         self.loadingView.isHidden = false
         
         
-        PTVHelpers.getStopsNear(location: Location(latitude: Config.TEST_LATITUDE, longitude: Config.TEST_LONGITUDE), routeTypes: [0]) { response in
-        }
-        
-        PTVHelpers.getNextDeparturesFrom(stopId: Config.ORIGINATING_STOP_ID, routeId: Config.ORIGINATING_ROUTE_ID, direction: Config.ORIGINATIG_DIRECTION) { response in
-            // Hide loading indicator and show results
-            DispatchQueue.main.async {
-                self.resultsView.isHidden = false
-                self.loadingView.isHidden = true
-                self.loadingIndicator.stopAnimation(self)
-                
-                if response!.count > 0 {
-                    let nextDept = response![0]
-                    
-                    self.updateNextDeparture(nextDept)
-                } else {
-                    print("No departures found")
-                }
+        self.group.notify(queue: .main) {
+            self.resultsView.isHidden = false
+            self.loadingView.isHidden = true
+            self.loadingIndicator.stopAnimation(self)
+            
+            if self.nextDepartures!.count > 0 {
+                self.updateNextDeparture(self.nextDepartures![0])
+            } else {
+                print("No departures found")
             }
         }
     }
     
     fileprivate func getNextDepartureInfo() {
+        self.group.enter()
+        PTVHelpers.getRoute(routeId: Config.ORIGINATING_ROUTE_ID) { response in
+            self.route = response
+            self.group.leave()
+        }
+        
+        self.group.enter()
+        PTVHelpers.getStopsOn(routeId: Config.ORIGINATING_ROUTE_ID) { response in
+            self.stops = response
+            self.group.leave()
+        }
+        
+        self.group.enter()
+        PTVHelpers.getNextDeparturesFrom(stopId: Config.ORIGINATING_STOP_ID, routeId: Config.ORIGINATING_ROUTE_ID, direction: Config.ORIGINATIG_DIRECTION) { response in
+            self.nextDepartures = response
+            self.group.leave()
+        }
         
     }
     

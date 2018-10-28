@@ -47,17 +47,23 @@ class PTVHelpers {
         }
     }
     
-    static fileprivate func getRoute(routeId: Int, _ completionHandler: @escaping (Route?) -> ()) {
+    static public func getRoute(routeId: Int, _ completionHandler: @escaping (Route?) -> ()) {
         self.communicator.retrieveRouteDetails(routeID: routeId, parameters: nil) { response in
             completionHandler(response?.route)
         }
     }
     
-    static fileprivate func getRouteTypes(_ completionHandler: @escaping ([RouteType]) -> ()) {
+    static public func getRouteTypes(_ completionHandler: @escaping ([RouteType]) -> ()) {
         self.communicator.retrieveRouteTypes(parameters: nil) { response in
             completionHandler((response?.routeTypes)!)
         }
     }
-
-
+    
+    static public func getStopsOn(routeId: Int, _ completionHandler: @escaping ([StopOnRoute]) -> ()) {
+        PTVHelpers.getRouteTypes() { routeTypes in
+            self.communicator.retrieveStopsOnRoute(routeID: routeId, routeType: routeTypes[0], parameters: nil) { stops in
+                completionHandler((stops?.stops)!)
+            }
+        }
+    }
 }
