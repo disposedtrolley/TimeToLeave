@@ -14,6 +14,7 @@
 		5A008AFD218306880095CA88 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A008AFC218306880095CA88 /* Utils.swift */; };
 		5A5795B1217B3064009634B1 /* TimetableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5795B0217B3064009634B1 /* TimetableViewController.swift */; };
 		5A5795B3217B336B009634B1 /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5795B2217B336B009634B1 /* EventMonitor.swift */; };
+		5A640315219FDA7600B65A40 /* SettingsWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A640314219FDA7600B65A40 /* SettingsWindowController.swift */; };
 		5AF95AD521857E5700FF4CB2 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF95AD421857E5700FF4CB2 /* Config.swift */; };
 		5AF95AD721857F5000FF4CB2 /* APICredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF95AD621857F5000FF4CB2 /* APICredentials.swift */; };
 		C938AA54EAC6310170EBFF94 /* Pods_TimeToLeave.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9344E61D89723CA30101F6A /* Pods_TimeToLeave.framework */; };
@@ -31,6 +32,7 @@
 		5A008AFC218306880095CA88 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		5A5795B0217B3064009634B1 /* TimetableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableViewController.swift; sourceTree = "<group>"; };
 		5A5795B2217B336B009634B1 /* EventMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
+		5A640314219FDA7600B65A40 /* SettingsWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsWindowController.swift; sourceTree = "<group>"; };
 		5AF95AD421857E5700FF4CB2 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		5AF95AD621857F5000FF4CB2 /* APICredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICredentials.swift; sourceTree = "<group>"; };
 		6E90183A1F9E3BBCB02978F8 /* Pods-TimeToLeave.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeToLeave.release.xcconfig"; path = "Pods/Target Support Files/Pods-TimeToLeave/Pods-TimeToLeave.release.xcconfig"; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 				5A5795B0217B3064009634B1 /* TimetableViewController.swift */,
 				5A5795B2217B336B009634B1 /* EventMonitor.swift */,
 				5A008AFC218306880095CA88 /* Utils.swift */,
+				5A640314219FDA7600B65A40 /* SettingsWindowController.swift */,
 			);
 			path = TimeToLeave;
 			sourceTree = "<group>";
@@ -240,6 +243,7 @@
 				5A5795B1217B3064009634B1 /* TimetableViewController.swift in Sources */,
 				5AF95AD521857E5700FF4CB2 /* Config.swift in Sources */,
 				5A00839E217B245E00A99299 /* AppDelegate.swift in Sources */,
+				5A640315219FDA7600B65A40 /* SettingsWindowController.swift in Sources */,
 				5A008AFD218306880095CA88 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

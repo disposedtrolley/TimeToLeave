@@ -24,6 +24,17 @@ class TimetableViewController: NSViewController {
     @IBOutlet weak var resultsView: NSView!
     @IBOutlet weak var loadingIndicator: NSProgressIndicator!
     
+    @IBAction func showSettingsView(_ sender: Any) {
+        var myWindow: NSWindow? = nil
+        let storyboard = NSStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateController(withIdentifier: "settingsWindow") as! NSViewController
+        myWindow = NSWindow(contentViewController: controller)
+        NSApp.activate(ignoringOtherApps: true)
+        myWindow?.makeKeyAndOrderFront(self)
+        let vc = NSWindowController(window: myWindow)
+        vc.showWindow(self)
+    }
+    
     var nextDepartures: [Departure]?
     var stops: [StopOnRoute]?
     var route: Route?

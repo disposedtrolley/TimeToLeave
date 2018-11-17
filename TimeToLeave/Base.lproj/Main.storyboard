@@ -5,6 +5,19 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--View Controller-->
+        <scene sceneID="mmQ-qA-sha">
+            <objects>
+                <viewController storyboardIdentifier="settingsWindow" id="iuf-OV-YRM" sceneMemberID="viewController">
+                    <view key="view" id="zCt-16-vUB">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </view>
+                </viewController>
+                <customObject id="ToX-w2-Hc1" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="585" y="317"/>
+        </scene>
         <!--Application-->
         <scene sceneID="JPo-4y-FX3">
             <objects>
@@ -678,7 +691,7 @@
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="0.0"/>
+            <point key="canvasLocation" x="75" y="107"/>
         </scene>
         <!--Timetable View Controller-->
         <scene sceneID="hIz-AP-VOD">
@@ -754,14 +767,14 @@
                                         </textFieldCell>
                                     </textField>
                                     <scrollView fixedFrame="YES" borderType="line" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SZC-Z6-DcL">
-                                        <rect key="frame" x="20" y="20" width="440" height="135"/>
+                                        <rect key="frame" x="20" y="34" width="440" height="121"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <clipView key="contentView" ambiguous="YES" id="ZCM-8f-Ozm">
-                                            <rect key="frame" x="1" y="1" width="438" height="133"/>
+                                            <rect key="frame" x="1" y="1" width="438" height="119"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="k0p-Dd-ALH" viewBased="YES" id="lwT-pz-82V">
-                                                    <rect key="frame" x="0.0" y="0.0" width="438" height="108"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="438" height="94"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <size key="intercellSpacing" width="3" height="2"/>
                                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -916,6 +929,17 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableHeaderView>
                                     </scrollView>
+                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fry-uq-hjf">
+                                        <rect key="frame" x="20" y="3" width="65" height="23"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="roundTextured" title="Settings" bezelStyle="texturedRounded" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="JRG-nX-I06">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="showSettingsView:" target="XfG-lQ-9wD" id="nXH-Oe-5Hj"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="VC9-wZ-wpF" firstAttribute="top" secondItem="CFP-wF-S8c" secondAttribute="top" constant="49" id="1vB-cW-ZKb"/>
@@ -955,7 +979,7 @@
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="128" y="545"/>
+            <point key="canvasLocation" x="86" y="317"/>
         </scene>
     </scenes>
 </document>
